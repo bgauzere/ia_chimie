@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "ia_pour_la_chimie"
+version = "0.1.0"
+description = ""
+authors = ["Gauzere Benoit <benoit.gauzere@insa-rouen.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.8.10"
+matplotlib = "*"
+numpy = "*"
+networkx = "*"
+scikit-learn = "*"
+torch-geometric = "*"
+requests = "*"
+ipdb = "*"
+graphkit-learn = "^0.2.1.post20230420152218"
+ipykernel = "*"
+rdkit = "*"
+drawdata = "*"
+graphviz = "*"
+xgboost = "*"
+pandas = "*"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
