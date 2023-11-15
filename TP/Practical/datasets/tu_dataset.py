@@ -24,8 +24,8 @@ class MutagDataset():
                                       remove_self_loops=True) for g in self.dataset_MUTAG]
         convert_features_names(graphs_MUTAG,cv_node_attr=self.convert_node_attr_MUTAG,
                        old_name_node="x",new_name_node="atom")
-        self.graph_data = graphs_MUTAG
+        self.graphs = graphs_MUTAG
         self.targets = self.dataset_MUTAG.data.y.numpy()
-    
+
 
 
