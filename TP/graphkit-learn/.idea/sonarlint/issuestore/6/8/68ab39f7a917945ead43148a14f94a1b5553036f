@@ -1,0 +1,6 @@
+
+qpython:S11921"RDefine a constant instead of duplicating this literal 'Computing kernels' 3 times.(¦°ğ8ƒš®ş0
+zpython:S117Û"VRename this local variable "exp_D" to match the regular expression ^[_a-z][a-z0-9_]*$.(ØñÇ¦şÿÿÿÿ8ƒš®ş0
+mpython:S117Œ"NRename this parameter "Gn" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ¯ıë8„š®ş0
+]python:S112">Replace this generic exception class with a more specific one.(ÔÀõª8„š®ş0
+mpython:S117’"NRename this parameter "Gn" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹ƒ¨Æ8„š®ş0
