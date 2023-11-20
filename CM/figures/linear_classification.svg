@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 1468 1271"
+   id="svg72"
+   sodipodi:docname="linear_classification.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <defs
+     id="defs76" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     id="namedview74"
+     showgrid="false"
+     inkscape:zoom="0.092840283"
+     inkscape:cx="-2682.8843"
+     inkscape:cy="1491.252"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg72" />
+  <title
+     id="title2">SVM Separating Hyperplanes</title>
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>SVM Separating Hyperplanes</dc:title>
+        <dc:date>2012-11-26</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Zachary Weinberg</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     fill="#000"
+     stroke="none"
+     d="M102.94,10,88.469,49.344c3.4909-2.5055,7.477-3.9995,11.531-4.5v1128.8h1323.5c-0.494,4.0412-2.0111,7.9815-4.5312,11.406l39.344-14.469-39.3-14.4c2.5093,3.496,4.0017,7.4708,4.5,11.531h-1317.5v-1122.8c4.0474,0.49182,7.9764,1.9762,11.406,4.5z"
+     id="path6" />
+  <circle
+     id="a"
+     cx="468.172"
+     cy="306.08"
+     r="31.06"
+     fill="#000"
+     stroke="none" />
+  <use
+     xlink:href="#a"
+     x="-127.78"
+     y="128.27"
+     id="use9" />
+  <use
+     xlink:href="#a"
+     x="-129.22"
+     y="-88"
+     id="use11" />
+  <use
+     xlink:href="#a"
+     x="-26.81"
+     y="-164.67"
+     id="use13" />
+  <use
+     xlink:href="#a"
+     x="93.33"
+     y="-127.68"
+     id="use15" />
+  <use
+     xlink:href="#a"
+     x="165.08"
+     y="-36.83"
+     id="use17" />
+  <use
+     xlink:href="#a"
+     x="153.24"
+     y="154.01"
+     id="use19" />
+  <use
+     xlink:href="#a"
+     x="-26.80"
+     y="193.57"
+     id="use21" />
+  <circle
+     id="b"
+     cx="747.11"
+     cy="993.67"
+     r="31.06"
+     fill="none"
+     stroke="#000"
+     stroke-width="5" />
+  <use
+     xlink:href="#b"
+     x="181.34"
+     y="-22"
+     id="use24" />
+  <use
+     xlink:href="#b"
+     x="247.68"
+     y="-270"
+     id="use26" />
+  <use
+     xlink:href="#b"
+     x="283.01"
+     y="18"
+     id="use28" />
+  <use
+     xlink:href="#b"
+     x="386.35"
+     y="-151"
+     id="use30" />
+  <use
+     xlink:href="#b"
+     x="389.69"
+     y="-342"
+     id="use32" />
+  <use
+     xlink:href="#b"
+     x="503.02"
+     y="-202"
+     id="use34" />
+  <use
+     xlink:href="#b"
+     x="627.36"
+     y="-136"
+     id="use36" />
+  <path
+     d="M 28.151304,1407.7815 1457.7866,-54.319116"
+     id="path50"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#ff0000;stroke-width:4"
+     sodipodi:nodetypes="cc" />
+  <text
+     fill="#000"
+     font-family="sans-serif"
+     font-size="64px"
+     x="1356.6881"
+     y="1248.8091"
+     id="text66">X<tspan
+   font-size="65%"
+   dy="18"
+   id="tspan64">1</tspan>
+</text>
+  <text
+     fill="#000"
+     font-family="sans-serif"
+     font-size="64px"
+     x="8.09375"
+     y="91.510849"
+     id="text70">X<tspan
+   font-size="65%"
+   dy="18"
+   id="tspan68">2</tspan>
+</text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:12, 12;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 298.16076,1468.9038 1522.1538,164.84304"
+     id="path50-3"
+     sodipodi:nodetypes="cc" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:12, 12;stroke-dashoffset:0;stroke-opacity:1"
+     d="M -166.43837,1298.4873 1105.1571,-43.65533"
+     id="path50-3-6"
+     sodipodi:nodetypes="cc" />
+</svg>

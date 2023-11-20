@@ -1,0 +1,542 @@
+\documentclass[11pt]{beamer}
+
+% \usetheme{CambridgeUS}
+% \usecolortheme{dolphin}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage[english]{babel}
+
+\usepackage{url}
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{tcolorbox}
+\usepackage{minted}
+
+\usefonttheme[onlymath]{serif}
+
+\hypersetup{
+  colorlinks,
+  citecolor=green,
+  linkcolor=black
+}
+
+\definecolor{darkgreen}{RGB}{0,128,0}
+ 
+\hypersetup{
+  colorlinks,
+  citecolor=darkgreen,
+  linkcolor=black
+}
+
+\usepackage{natbib}
+
+\title{Decisions Trees, Random Forests and Ensemble Methods}
+\author{Benoit Gaüzère}
+
+\input{macros}
+
+\institute{INSA Rouen Normandie - Laboratoire LITIS}
+
+% =================================================================================
+\begin{document}
+\maketitle
+
+% =================================================================================
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Decision Tree}
+\begin{frame}{Introduction to Decision Trees}
+    \begin{itemize}
+        \item Supervised learning for classification and regression.
+        \item Simple to understand and interpret.
+        \item Recursive algorithm to construct the decision trees
+    \end{itemize}
+
+\centering{ 
+\includegraphics[width=.7\textwidth]{flowchart}
+    }
+    
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Decision Tree}
+  \begin{block}{Principle}
+    Learn decision rules to separate the data.
+    \begin{center}
+      \only<1>{
+        \includegraphics[width=.75\textwidth]{decision_tree_data}
+      }
+      \only<2>{
+        \includegraphics[width=.75\textwidth]{decision_tree_tree}
+      }
+      \only<3>{
+        \includegraphics[width=.75\textwidth]{decision_tree_boundary}
+        }
+    \end{center}
+    
+  \end{block}
+
+  
+\end{frame}
+
+
+
+% =================================================================================
+\subsection{Decision Tree Algorithm}
+% =================================================================================
+
+\begin{frame}
+  \frametitle{How to learn Decision Trees ? }
+  \begin{block}{Split Data}
+    \begin{enumerate}
+    \item Choose a feature $f$
+    \item Compute a threshold $t_f$
+    \end{enumerate}
+    \pause
+  \end{block}
+  \begin{center}
+    \emph{How to determine $t_f$ ? (and $f$) }
+  \end{center}
+  \pause
+  \begin{block}{Maximize Information Gain}
+    $$
+    IG(D_p,f)  = I(D_p) - \frac{N_l}{N_p} I(D_l) - \frac{N_r}{N_p} I(D_r)
+    $$
+
+    with:
+    \begin{itemize}
+    \item $I$ : measure of impurity
+    \item $D_p$, $D_l$ and $D_r$ the datasets corresponding to parent, left node and right node.
+    \end{itemize}
+
+  \end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Impurity measures}
+  \framesubtitle{To minimize !}
+  \begin{block}{Entropy}
+    %2 classes
+    $$
+    I_e(p)= - p * log_2(p) - (1-p) * log_2(1-p)
+    $$
+    with $p$ characterizing the probability for a sample to belong to one class
+    in a given node ($P(C_k | D)$).
+    \begin{center}
+   \includegraphics[width=.6\textwidth]{entropy}
+   \end{center}
+ \end{block}
+%\framebreak
+  %Very similar to entropy.
+    % minimize the misclassification error
+    
+  \begin{block}{Gini Impurity}
+    $$
+    I_G(p) = \sum_{i=1}^c p_i * (1-p_i) = 1 - \sum_{i=1}^c p_i^2
+    $$
+    for $c=2, I_G(p) = 1 - p^2 - (1-p)^2$. 
+    \begin{center}
+    \includegraphics[width=.6\textwidth]{gini}
+  \end{center}
+\end{block}
+
+  \begin{block}{Classification error}
+    $$I_E(p) = 1 - \max_{i \in 1 \dots c} {p_i}$$
+    Less sensitive to good repartition.
+    \begin{center}
+    \includegraphics[width=.6\textwidth]{ce}
+  \end{center}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Differences between impurity}
+  \includegraphics[width=\textwidth]{impurity_measures}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The CART algorithm}
+
+  \begin{algorithmic}
+    \Function{split\_recur}{$D$}
+      \If{not a leaf}
+       \State $\theta^\star = \argmax_\theta IG(D,\theta)$
+       \State $D_l,D_r = \textrm{partition}(D,\theta^\star)$
+       \State $\textsc{split\_recur}(D_l)$
+       \State $\textsc{split\_recur}(D_r)$
+       \EndIf
+       \EndFunction
+ \end{algorithmic}
+ 
+  \begin{itemize}
+  \item with $\theta = (f,tf)$
+  \item Recursively select the best split which maximize the IG
+  \item When does it stop ?
+    \pause
+    \begin{itemize}
+    \item Only one class in $D$
+    \item Max depth reach
+    \item Min number of samples $D$ reached
+    \end{itemize}
+  \end{itemize}
+%%   p182, aurélien géron
+%%   \url{https://scikit-learn.org/stable/modules/tree.html#mathematical-formulation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hyperparameters of Decision Tree}
+    \begin{block}{Maximum depth}
+    Specify the maximal depth of the tree. An higher depth will make dedicate
+    categories, but prone to overfit.
+    \end{block}
+    \vfill
+    \begin{block}{Min number of splits}
+      Same action as previous one. 
+    \end{block}
+    \begin{center}
+
+    $\to$ Both are used to terminate the recursive operation
+    \end{center}
+    
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Building a decision tree - the code}
+  
+  \begin{minted}
+    [
+      frame=lines,
+      framesep=2mm,
+      baselinestretch=1.2,
+      fontsize=\footnotesize,
+      linenos
+    ]
+    {python}
+    from sklearn.tree import DecisionTreeClassifier
+    max_depth = 10
+    criterion = 'gini'
+    clf = DecisionTreeClassifier(max_depth=max_depth,
+    criterion=criterion)
+    clf = clf.fit(X, y)
+    ypred = clf.predict(X)
+  \end{minted}
+
+  \begin{itemize}
+  \item User guide for hyperparameters  :
+    \href{https://scikit-learn.org/stable/modules/tree.html#tips-on-practical-use}{link}
+  \item $\Rightarrow$ Notebook
+    %% \item Exists for regression problems
+  \item the
+    \href{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}{documentation}
+    %% \item la
+    %%   \href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor}{doc
+    %%     regressor}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Limitations}
+  \begin{itemize}
+  \item Simple yet effective algorithm
+  \item Prone to overfitting \\
+    $\to$ one leaf $\Leftrightarrow$ one sample
+  \end{itemize}
+  \pause
+  \begin{center}
+  \includegraphics[width=.7\textwidth]{transition_decision_tree}
+  \end{center}
+\end{frame}
+
+\section{Ensemble Methods}
+\begin{frame}
+  \frametitle{Ensemble Methods}
+  \begin{block}{Idea}
+    United we stand
+    \begin{center}
+
+    \includegraphics[width=.7\textwidth]{ensemble_principle}
+    \end{center}
+  \end{block}
+  \begin{block}{How to combine them ?}
+    
+  \begin{itemize}
+  \item Majority voting,  Bagging and  Boosting
+  \end{itemize}
+    \end{block}
+
+\end{frame}
+
+
+\subsection{Random Forests}
+\begin{frame}[plain]
+
+  \begin{center}
+    \Huge{Random Forests}
+    \end{center}
+  
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Random Forests}
+    \begin{block}{Principle}
+      \begin{itemize}
+      \item Combine many decision trees to learn complex functions
+      \item Ensemble methods, majority voting 
+      \item Bagging \cite{breiman1996bagging}
+      \end{itemize}
+  
+      \begin{center}
+        \includegraphics[width=.7\textwidth]{random_forests}
+      \end{center}
+    \end{block}
+   
+  \end{frame}
+
+
+\begin{frame}
+  \frametitle{Algorithm summarization}
+  \begin{enumerate}
+  \item Randomly choose $n$ examples (bootstrap)
+  \item Build a decision tree from the bootstrap
+    \begin{enumerate}
+    \item Randomly select $d$ features
+    \item Split according to best pair feature/threshold
+    \end{enumerate}
+  \item Repeat $k$ times
+  \item Aggregate decision by majority vote or average probability 
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Random Forests Hyperparameters}
+
+  \begin{block}{Number of trees}
+    Adjust the number of trees composing the forests
+    \begin{itemize}
+    \item low number : fast to compute, but less accurate
+    \item high number : slower to compute, but more accurate up to some number
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Number of features}
+    Determine the number of features to be used when splitting the data
+    \begin{itemize}
+    \item See the guidelines of \verb|scikit-learn|
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Tree depth}
+    Specify the maximal depth of tree. An higher depth will make dedicate
+    categories, but less generalizable.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Random Forests : the code !}
+  
+  \begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+from sklearn.ensemble import RandomForestClassifier
+n_estimators = 20 # the number of trees in the forest
+max_depth = None # expand as you can
+max_features = "sqrt" # RTFM
+clf = RandomForestClassifier(n_estimators=n_estimators,
+                             max_depth=max_depth,
+                             max_features=max_features)
+clf.fit(X,y)
+ypred = clf.predict(X)
+\end{minted}
+
+\begin{itemize}
+\item User guide for hyperparameters  :
+  \href{https://scikit-learn.org/stable/modules/ensemble.html#forest}{link}
+  
+\item $\Rightarrow$ Notebook
+%% \item Exists for regression problems
+  \item the
+  \href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}{documentation}
+%% \item la
+%%   \href{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor}{doc
+%%     regressor}
+\end{itemize}
+
+\end{frame}
+
+\section{Gradient Boosting}
+\begin{frame}[plain]
+
+  \begin{center}
+    \Huge{Boosting}
+    \end{center}
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Boosting}
+  \cite{schapire1990strength}
+
+  \begin{block}{Principle}
+    \begin{itemize}
+    \item Weak learners, just better than random guess
+    \item Focus to exemples hard to classify
+    \end{itemize}
+  \end{block}
+\begin{block}{Boosting}
+\begin{enumerate}
+\item Train a weak learner $C_1$ on  a subset of training examples $D_1$
+\item Train a second weak learner $C_2$ on a subset of training examples $D_2$
+  with $50 \%$ of misclassified data by $C_1$
+\item Train a third weak learner $C_3$ on the data on which $C_1$ and $C_2$ disagree
+\item Combine the weak learners $C_1$, $C_2$, and $C_3$ via majority voting.
+\end{enumerate}
+\begin{itemize}
+\item \emph{AdaBoost} :weight misclassified examples betweeen rounds  
+ \end{itemize}
+\end{block}
+ 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gradient Boosting}
+  \begin{itemize}
+  \item Build a series of trees
+  \item Each tree learns on the error of the previous ones
+  \item The ensemble is improving by small steps
+  \item Steps are computed according to a loss gradient
+  \end{itemize}
+
+  \includegraphics[width=\textwidth]{gradient_boosting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Gradient Boosting Hyperparameters}
+
+  \begin{block}{Number of trees}
+    Same as before : 
+    \begin{itemize}
+    \item low number : fast to compute, but less accurate
+    \item high number : slower to compute, but more accurate up to some number
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Tree depth}
+    Specify the maximal depth of tree. An higher depth will make dedicate
+    categories, but less generalizable.
+  \end{block}
+\end{frame}
+
+  \begin{block}{Learning rate}
+    Determine how much each weak learner contributes to the decision
+    \begin{itemize}
+    \item Regularization : small values produces a better test error
+    \item help : \url{https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting-shrinkage}
+    \end{itemize}
+  \end{block}
+
+
+  \begin{frame}[allowframebreaks,fragile]
+    \frametitle{Implementations of Boosting}
+    \begin{block}{GradientBoosting with sklearn}
+      \begin{minted}
+        [
+          frame=lines,
+          framesep=2mm,
+          baselinestretch=1.2,
+          fontsize=\footnotesize,
+          linenos
+        ]
+        {python}
+        from sklearn.ensemble import GradientBoostingClassifier
+        n_estimators = 20 # the number of weak learners
+        learning_rate = .1
+        clf = GradientBoostingClassifier(n_estimators=n_estimators,
+        learning_rate=learning_rate)
+        clf.fit(X,y)
+        ypred = clf.predict(X)
+      \end{minted}
+
+    \end{block}
+    \framebreak
+    \begin{block}{XgBoost}
+      \begin{minted}
+        [
+          frame=lines,
+          framesep=2mm,
+          baselinestretch=1.2,
+          fontsize=\footnotesize,
+          linenos
+        ]
+        {python}
+        import xgboost as xgb
+        n_estimators = 20 # the number of weak learners
+        learning_rate = .1
+        clf = xgb.XGBClassifier(n_estimators=n_estimators,
+        learning_rate=learning_rate)
+        clf.fit(X,y)
+        ypred = clf.predict(X)
+      \end{minted}
+    \end{block}
+  \end{frame}
+
+% =================================================================================
+\section{Conclusion}
+% =================================================================================
+
+\begin{frame}{Conclusion}
+  \begin{block}{Decision trees and Co.}
+    \begin{itemize}
+    \item Works (very) well on tabular data
+    \item Interpretable
+    \item State of the art on many challenges (Kaggles)
+    \item Overfitting
+    \item Need of a tabular representation of the data 
+    \end{itemize}
+    
+  \end{block}
+\end{frame}
+
+% =================================================================================
+\nocite{*}
+\begin{frame}
+  \frametitle{References}
+    \begin{block}{References}
+      \bibliographystyle{plainnat}
+      \bibliography{biblio}
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

@@ -1,0 +1,469 @@
+\documentclass[11pt]{beamer}
+
+% \usetheme{CambridgeUS}
+% \usecolortheme{dolphin}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage[english]{babel}
+
+\usepackage{url}
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{tcolorbox}
+\usepackage{minted}
+
+\usefonttheme[onlymath]{serif}
+
+\hypersetup{
+  colorlinks,
+  citecolor=green,
+  linkcolor=black
+}
+
+\definecolor{darkgreen}{RGB}{0,128,0}
+ 
+\hypersetup{
+  colorlinks,
+  citecolor=darkgreen,
+  linkcolor=black
+}
+
+\usepackage{natbib}
+
+\title{Introduction to Neural Networks}
+\subtitle{ Inspired from \cite{raschka2022machine, chollet2021deep,
+    geron2022hands}}
+
+\author{Benoit Gaüzère}
+
+\input{macros}
+
+\institute{INSA Rouen Normandie - Laboratoire LITIS}
+
+% =================================================================================
+\begin{document}
+\maketitle
+
+% =================================================================================
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction to Representation Learning}
+\label{sec:intro}
+
+\begin{frame}
+  \frametitle{Limitations of others methods}
+  \begin{block}{Analysis of classic ML}
+    \begin{enumerate}
+    \item Choose a dataset and a task
+    \item Compute features from the data
+    \item Learn the model on features
+    \item Predict
+    \end{enumerate}
+  \end{block}
+
+  \begin{block}{Problems}
+    \begin{center}
+      How can we be sure that our features are optimal ?
+    \end{center}
+    \begin{itemize}
+    \item They define the latent space
+    \item Model ability to learn is limited by these representations
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Neural Networks and Deep Learning}
+  \begin{block}{Motivation}
+    \begin{itemize}
+    \item End to end learning
+    \item Let's the model to find the optimal representation according to a task
+    \end{itemize}
+  \end{block}
+\begin{center}
+
+
+  \only<1>{
+\includegraphics[width=.75\textwidth]{trad_ml}
+}
+\only<2>{
+\includegraphics[width=.75\textwidth]{rl_ml}
+}
+\end{center}
+\end{frame}
+
+
+\section{Historical of Neural Networks}
+\label{sec:histoire}
+
+\begin{frame}[plain]
+  \begin{center}
+    {\Huge History of NN}
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to simulate the human intelligence ?}
+  \begin{block}{The human brain}
+    \begin{itemize}
+    \item Able to learn and adapt
+    \item Simple neurons connected together
+    \item Good connections are boosted
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Brain Neuron}
+  \includegraphics[width=\textwidth]{neurone_brain}
+\end{frame}
+
+\begin{frame}
+  \frametitle{McCulloch Pitts (MCP) Neuron in 1943}
+  \includegraphics[width=\textwidth]{mcculloghpitts.png}
+  \begin{itemize}
+  \item A first simple approach
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The perceptron learning rule}
+  \includegraphics[width=.8\textwidth]{rosenblatt}
+  \begin{itemize}
+  \item The learning rule
+  \item Basics of NN
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{And then}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+        \begin{itemize}
+  \item Adaline 
+  \item Multilayer Perceptron
+  \item LeNet
+  \item AlexNet
+  \item \dots
+  \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+        \includegraphics[width=\textwidth]{adaline}
+    \end{column}
+  \end{columns}
+  \includegraphics[width=\textwidth]{alexnet}
+\end{frame}
+
+\section{The Perceptron Model}
+\label{sec:perceptron}
+\begin{frame}[allowframebreaks]
+  \frametitle{The Perceptron}
+  \begin{block}{Artifical neurons}
+    \begin{itemize}
+    \item inputs $x$ : vector components
+    \item weights $w$: how inputs are used
+    \item output $z = w^\top x +b $ : net input
+    \item Neuron fires if $z > 0$  i.e. $$\sigma(z) = \begin{cases}
+       1 \text{ if } z > 0 \\
+       0 \text{ otherwise }
+     \end{cases}$$
+    \end{itemize}
+  \end{block}
+  % Rajouter image
+  \begin{block}{Perceptron Learning Rule}
+    \begin{enumerate}
+      \item Initialize weights to small random values
+      \item For each training sample $\x_i$:
+      \begin{enumerate}
+        \item Compute the output value $\hat{y}$
+        \item Update the weights
+        \item Repeat until convergence
+      \end{enumerate}
+    \end{enumerate}
+  \end{block}
+  \begin{block}{How to update}
+    \begin{itemize}
+      \item Update the weights according to the error
+      \item $ w_j = w_j + \Delta w_j$
+      \item $\Delta w_j = \eta (y_i - \hat{y}_i) x_i(j)$
+      \item $\eta$ is the learning rate
+      \item $b = b + \Delta b, \Delta b = \eta (y_i - \hat{y}_i)$
+    \end{itemize}
+  \end{block}
+  \begin{center}
+    Let's try it !
+  \end{center}
+
+\begin{center}
+\includegraphics[width=\textwidth]{perceptron}
+\end{center}
+  
+%% figure 2.4 p.25 Raschka
+
+%% % exemple à la main de la descente de gradient
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Adding some complexity}
+  % Non linéarité
+  \begin{block}{Linearity}
+    The model is linear by design
+    \begin{itemize}
+    \item Add some linearities !
+    \item $z = g(w^\top x + b)$
+    \item $g$ is a differentiable function (ReLU, tanh, sigmoid, \dots)
+    \end{itemize}
+  \end{block}
+  \begin{block}{Layers}
+    Add more layers to complexify the interactions between the components of $x$
+    \begin{itemize}
+    \item Lead to Multi Layer Perceptron
+    \item And \textbf{Deep} Learning
+    \end{itemize}
+  \end{block}
+\end{frame} 
+
+\section{The Multi Layer Perceptron}
+\label{sec:mlp}
+
+\begin{frame}{Multi Layer Perceptron}
+  \begin{block}{Principle}
+    Learn the best representation of data
+    \vfill
+    
+\begin{figure}
+  \centering
+      \includegraphics[width=\textwidth]{myperceptron}
+\end{figure}
+   
+    \vfill
+      \begin{itemize}
+      \item Weights $\w$ are optimized by gradient descent
+      \item Sequence of layers
+      \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{MLP Hyperparameters}
+
+  \begin{block}{Hidden layers}
+    Define the architecture of your MLP
+    \begin{itemize}
+    \item Number of layers : a high number tends to deep networks
+    \item Number of neurons per layer : a high number tends to wide networks
+    \end{itemize}
+    The model will be more complex if more neurons are used
+  \end{block}
+
+  \begin{block}{Activation function}
+    Determine how the non linearity is brought to the model
+    \begin{itemize}
+    \item identity : linear model
+    \item tanh, relu, logistic : non linears. ReLU is a very popular choice
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{MLP : the code !}
+  
+  \begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+from sklearn.neural_network import MLPClassifier
+activation = 'relu' # default
+layers = [32,64,128,64,32] #5 layers avec différentes tailles
+clf = MLPClassifier(hidden_layer_sizes=layers,max_iter=500)
+clf.fit(X,y)
+ypred = clf.predict(X)
+\end{minted}
+
+\begin{itemize}
+\item User guide for tips and help :
+  \href{https://scikit-learn.org/stable/modules/neural_networks_supervised.html#mlp-tips}{link}
+  \item $\Rightarrow$ Notebook
+%\item Exists for regression problems
+  \item the
+  \href{https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html}{documentation}
+%% \item la
+%%   \href{https://scikit-learn.org/stable/modules/svm.html#regression}{doc
+%%     regressor}
+\end{itemize}
+
+\end{frame}
+%% \begin{frame}
+%%   \frametitle{The Multi Layer Perceptron}
+%%   \begin{block}{Principle}
+%%     \begin{itemize}
+%%     \item Stack non linears layers
+%%     \item A layer :
+%%       \begin{itemize}
+%%       \item An input size $m$
+%%       \item A output size $d$
+%%       \item An activation function (non linearity)
+%%       \end{itemize}
+%%     \end{itemize}
+%%   \end{block}
+%%   \begin{center}
+%%   \includegraphics[width=.8\textwidth]{mlp}
+%%   \end{center}
+%% \end{frame}
+
+
+
+%% \begin{frame}
+%%   \frametitle{Backpropagation}
+%%   \begin{block}{}
+    
+%%   \end{block}
+%% \end{frame}
+
+\begin{frame}
+  \frametitle{Tensorflow playground}
+  \includegraphics[width=\textwidth]{tensorflow}
+  \url{https://playground.tensorflow.org/}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Exemple with MNIST}
+  $\rightarrow$ Notebook
+
+  \begin{minted}
+    [
+      frame=lines,
+      framesep=2mm,
+      baselinestretch=1.2,
+      fontsize=\footnotesize,
+      linenos
+    ]
+    {python}
+    
+    import matplotlib.pyplot as plt
+    from sklearn.datasets import load_digits
+    from sklearn.neural_network import MLPClassifier
+    from sklearn.model_selection import train_test_split
+
+    X,y = load_digits(return_X_y = True)
+    plt.imshow(X[124,:].reshape(8,8),cmap="gray")
+
+    mlp = MLPClassifier(hidden_layer_sizes=(64,32,16),
+        activation='relu',verbose=True)
+    mlp.fit(X_train,y_train)
+    X_train, X_test, y_train, y_test = train_test_split(X,y)
+    from sklearn.metrics import accuracy_score
+    print(accuracy_score(y_test,mlp.predict(X_test)))
+    0.97777777... 
+  \end{minted}
+  
+\end{frame}
+
+\section{CNN, RNN etc}
+\label{sec:cnnandco}
+
+\begin{frame}
+  \frametitle{Extension of MLP}
+  \framesubtitle{How to learn on non tabular data ?}
+  \begin{block}{Constraints}
+    \begin{itemize}
+    \item Data must be of fixed size dimensions
+    \item Continuous
+    \item All parts must be differentiable 
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Nature of the data}
+    \begin{itemize}
+    \item How to take into account data topology ?
+    \item Is MLP sufficient ? 
+    \end{itemize}
+  \end{block}
+  
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{RNN : Adaptation to sequences}
+  \includegraphics[width=\textwidth]{rnn}
+                  {\footnotesize [wikipedia] }
+                  
+                  $\Rightarrow$ LSTM, GRU, \dots
+\end{frame}
+
+\begin{frame}
+  \frametitle{CNN : Adaptation to images}
+  \includegraphics[width=\textwidth]{cnn}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{And other things \dots}
+  \begin{block}{Transformers}
+    \begin{itemize}
+    \item SOTA for NLP and Images
+    \item GPT is for Generative Pretrained Transformer
+    \item Embed the context to derive a better decision
+    \end{itemize}
+  \end{block}
+  \begin{block}{Generative models}
+    \begin{itemize}
+    \item GAN
+    \item Diffusion models
+    \item dots
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Conclusion}
+  \begin{itemize}
+  \item Neural Networks is a powerful ML method
+  \item Paradigm shift : representation is learnt
+  \item Strong results since 10 years
+  \end{itemize}
+  \begin{block}{What's next ?}
+    \begin{center}
+    {\Large How to adapt NN and CNN to molecules ? }
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+% =================================================================================
+\nocite{*}
+\begin{frame}
+  \frametitle{References}
+    \begin{block}{References}
+      \bibliographystyle{plainnat}
+      \bibliography{biblio_nn}
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

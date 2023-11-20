@@ -1,0 +1,246 @@
+\documentclass[11pt, pdf, compress, handout]{beamer}
+
+% \usetheme{CambridgeUS}
+% \usecolortheme{dolphin}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{color}
+
+\hypersetup{
+  colorlinks,
+  citecolor=green,
+  linkcolor=black
+}
+\title{Cross Validation}
+\author{Benoit Gaüzère}
+
+\input{macros}
+
+\institute{INSA Rouen Normandie - Laboratoire LITIS}
+
+% =================================================================================
+\begin{document}
+\maketitle
+
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{block}{How to learn a ``good'' model ?}
+    \begin{itemize}
+    \item We want good performance 
+    \item Simple as possible 
+    \item Able to predict unseen data
+    \end{itemize}
+    
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Empirical Risk}
+  \begin{block}{Error on learning set}
+    \begin{itemize}
+    \item Empirical risk:
+      $$
+      R_emp(f) = \frac{1}{N} \sum_{i=1}^N \clL(f(\x_i),y_i) 
+      $$
+      
+    \item $\clL$ evaluates the performance of prediction $f(\x_i)$
+    \item Error is computed on the training set
+    \item The model can be too specialized on this particular dataset
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Generalisation}
+  \begin{block}{Tentative of Definition}
+
+    \begin{itemize}
+    \item Ability of the model to predict well unseen data
+    \item Hard to evaluate 
+    \item Real objective of a model
+    \end{itemize}
+  \end{block}
+  \begin{block}{Regularisation}
+    \begin{itemize}
+    \item Regularization term control the model
+    \item Balances between empirical risk and generalization ability
+    \item Need to tune the balance ($\lambda$)
+    \end{itemize}
+    
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to evaluate to ability to generalize ?}
+  \begin{block}{Evaluate on unseen data}
+    \begin{itemize}
+    \item Define and isolate a test set
+    \item Evaluate on the test set
+    \end{itemize}
+  \end{block}
+  \begin{block}{Bias}
+    \begin{itemize}
+    \item Avoid to use same data in train and test
+    \item Test set must be totally \emph{isolated}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overfitting vs Underfitting}
+  \begin{itemize}
+  \item Overfitting: low $R_{emp}$, high generalization error
+  \item Underfitting: high $R_{emp}$, medium generalization error
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{complexite}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Hyperparameters}
+  \begin{block}{Parameters outside the model}
+    \begin{itemize}
+    \item Some parameters are not learned by the model
+    \item They are ``hyperparameters'' and must be tuned
+    \item \danger Tuned on data outside the test set
+    \item Example: $\lambda$ in Ridge Regression
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to tune the hyperparameters ?}
+  \begin{block}{Validation set}
+    \begin{itemize}
+    \item Split train set into validation and learning set
+    \item Learn model parameters using the learning set
+    \item Evaluate the performance on validation set
+    \item Validation set simulates the test set, aka unseen data
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{General framework}
+  \includegraphics[width=\textwidth]{cross-validation-framework}
+\end{frame}
+\begin{frame}
+  \frametitle{Validation strategies}
+  \begin{block}{How to split validation/training set}
+    \begin{itemize}
+    \item Need of a strategy to split between training and validation
+      sets
+    \item Training is used to tune the parameters of the model
+    \item Validation is used to evaluate the model according to hyperparameters
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Train/Validation/Test}
+  \begin{block}{Single split}
+    \begin{itemize}
+    \item[\itemplus] An unique model to learn
+    \item[\itemmoins] May be subject to split bias
+    \item[\itemmoins] Only one evaluation of performance
+    \end{itemize}
+    \begin{center}
+      \includegraphics[width=\textwidth]{datasplit-App-Val-Test}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Leave one out}
+
+    \begin{block}{N splits}
+      \begin{itemize}
+      \item[\itemmoins] N models to learn
+      \item[\itemmoins] Validation error is evaluated on 1 data
+      \end{itemize}
+      \begin{center}
+        \includegraphics[width=\textwidth]{datasplit-leaveoneout}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{KFold Cross validation}
+  
+    \begin{block}{K splits}
+      \begin{itemize}
+      \item[\itemplus] K models to learn
+      \item Validation error is evaluated on N/K data
+      \item Some splits may be biased
+      \end{itemize}
+      \begin{center}
+        \includegraphics[width=\textwidth]{datasplit-kfold}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Shuffle Split Cross validation}
+      \begin{block}{K splits}
+      \begin{itemize}
+      \item Learn/Valid sets are randomly splited 
+      \item[\itemplus] K models to learn
+      \item[\itemplus] Avoid bias
+      \item [\itemmoins] Some data may not be evaluated
+      \end{itemize}
+      \begin{center}
+        \includegraphics[width=\textwidth]{datasplit-shufflesplit}
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{With scikit-learn}
+  \begin{itemize}
+    \item \textrm{sklearn.model\_selection.train\_test\_split}
+    \item \textrm{sklearn.model\_selection.KFold}
+    \item \textrm{sklearn.model\_selection.ShuffleSplit}
+    \item \textrm{sklearn.model\_selection.GridSearchCV}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Recommandation}
+  \begin{block}{Size of splits}
+    \begin{itemize}
+    \item How many splits ? 
+    \item How many element by split ?
+    \item Depends on the number of data
+    \item Tradeoff between learning and generalization
+    \end{itemize}
+  \end{block}
+  \begin{block}{Stratified splits}
+    \begin{itemize}
+    \item Splitting may induce to imbalanced datasets
+    \item Take care that the distribution of $\y$ is the same for all sets
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+\begin{frame}
+  \frametitle{Conclusion}
+  \begin{itemize}
+  \item A good protocol avoid bias
+  \item Test is \emph{never} used during tuning of (hyper)parameters
+  \item Perfect protocol doesn't exists
+  \end{itemize}
+\end{frame}
+
+
+\end{document}

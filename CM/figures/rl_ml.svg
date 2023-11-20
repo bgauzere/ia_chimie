@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="137.11455mm"
+   height="14.894184mm"
+   viewBox="0 0 137.11455 14.894184"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   sodipodi:docname="rl_ml.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8476291"
+     inkscape:cx="-147.75693"
+     inkscape:cy="20.566899"
+     inkscape:window-width="3840"
+     inkscape:window-height="1536"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7-1" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-27.711956,-50.627805)">
+    <g
+       id="g5"
+       transform="translate(-22.862966)">
+      <text
+         xml:space="preserve"
+         style="font-size:3.52777px;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#cc0000;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         x="73.221786"
+         y="59.311684"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#000000;stroke:#000000;stroke-width:0.15;stroke-dasharray:none"
+           x="73.221786"
+           y="59.311684">Dataset</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.52777px;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#cc0000;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         x="147.17982"
+         y="59.380585"
+         id="text1-9"><tspan
+           sodipodi:role="line"
+           id="tspan1-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#000000;stroke:#000000;stroke-width:0.15;stroke-dasharray:none"
+           x="147.17982"
+           y="59.380585">Predictions</tspan></text>
+      <g
+         id="g4"
+         transform="translate(9.0640345,6.3653564)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:Roboto;-inkscape-font-specification:Roboto;fill:#000000;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           x="100.46329"
+           y="52.613014"
+           id="text3"><tspan
+             sodipodi:role="line"
+             id="tspan3"
+             style="stroke-width:0.15"
+             x="100.46329"
+             y="52.613014">Learning</tspan></text>
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+           id="rect3-4"
+           width="28.988367"
+           height="14.494184"
+           x="92.804169"
+           y="44.462448"
+           ry="3.7012298" />
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ConcaveTriangle)"
+         d="M 86.609251,58.074896 H 98.064188"
+         id="path4"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#ConcaveTriangle-3)"
+         d="m 132.33879,58.074896 h 11.45493"
+         id="path4-9"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+</svg>
