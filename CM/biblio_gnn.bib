@@ -1,0 +1,98 @@
+@article{Gilmer2017,
+abstract = {Supervised learning on molecules has incredible potential to be useful in chemistry, drug discovery, and materials science. Luckily, several promising and closely related neural network models invariant to molecular symmetries have already been described in the literature. These models learn a message passing algorithm and aggregation procedure to compute a function of their entire input graph. At this point, the next step is to find a particularly effective variant of this general approach and apply it to chemical prediction benchmarks until we either solve them or reach the limits of the approach. In this paper, we reformulate existing models into a single common framework we call Message Passing Neural Networks (MPNNs) and explore additional novel variations within this framework. Using MPNNs we demonstrate state of the art results on an important molecular property prediction benchmark; these results are strong enough that we believe future work should focus on datasets with larger molecules or more accurate ground truth labels.},
+author = {Gilmer, Justin and Schoenholz, Samuel S. and Riley, Patrick F. and Vinyals, Oriol and Dahl, George E.},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Neural Message Passing for Quantum Chemistry - Gilmer et al. - Unknown.pdf:pdf},
+issn = {23318422},
+journal = {arXiv},
+mendeley-groups = {GNN},
+title = {{Neural message passing for quantum chemistry}},
+year = {2017}
+}
+@article{Ying2018,
+abstract = {Recently, graph neural networks (GNNs) have revolutionized the field of graph representation learning through effectively learned node embeddings, and achieved state-of-the-art results in tasks such as node classification and link prediction. However, current GNN methods are inherently flat and do not learn hierarchical representations of graphs-a limitation that is especially problematic for the task of graph classification, where the goal is to predict the label associated with an entire graph. Here we propose DIFFPOOL, a differentiable graph pooling module that can generate hierarchical representations of graphs and can be combined with various graph neural network architectures in an end-to-end fashion. DIFFPOOL learns a differentiable soft cluster assignment for nodes at each layer of a deep GNN, mapping nodes to a set of clusters, which then form the coarsened input for the next GNN layer. Our experimental results show that combining existing GNN methods with DIFFPOOL yields an average improvement of 5-10{\%} accuracy on graph classification benchmarks, compared to all existing pooling approaches, achieving a new state-of-the-art on four out of five benchmark data sets.},
+archivePrefix = {arXiv},
+arxivId = {1806.08804},
+author = {Ying, Rex and Morris, Christopher and Hamilton, William L. and You, Jiaxuan and Ren, Xiang and Leskovec, Jure},
+eprint = {1806.08804},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Hierarchical Graph Representation Learning with Differentiable Pooling arXiv 1806 . 08804v4 cs . LG 20 Feb 2019 - Ying, Morris, Hamil.pdf:pdf},
+issn = {10495258},
+journal = {Advances in Neural Information Processing Systems},
+mendeley-groups = {GNN},
+pages = {4800--4810},
+title = {{Hierarchical graph representation learning with differentiable pooling}},
+volume = {2018-December},
+year = {2018}
+}
+@article{Bruna2014,
+abstract = {Convolutional Neural Networks are extremely efficient architectures in image and audio recognition tasks, thanks to their ability to exploit the local translational invariance of signal classes over their domain. In this paper we consider possible generalizations of CNNs to signals defined on more general domains without the action of a translation group. In particular, we propose two constructions, one based upon a hierarchical clustering of the domain, and another based on the spectrum of the graph Laplacian. We show through experiments that for low-dimensional graphs it is possible to learn convolutional layers with a number of parameters independent of the input size, resulting in efficient deep architectures.},
+archivePrefix = {arXiv},
+arxivId = {1312.6203},
+author = {Bruna, Joan and Szlam, Arthur and Zaremba, Wojciech and LeCun, Yann and Szlam, Arthur and LeCun, Yann},
+eprint = {1312.6203},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Spectral networks and deep locally connected networks on graphs - Bruna et al. - 2014.pdf:pdf},
+journal = {2nd International Conference on Learning Representations, ICLR 2014 - Conference Track Proceedings},
+pages = {1--14},
+title = {{Spectral networks and deep locally connected networks on graphs}},
+year = {2014}
+}
+
+
+@article{Velickovic2017,
+abstract = {We present graph attention networks (GATs), novel neural network architectures that operate on graph-structured data, leveraging masked self-attentional layers to address the shortcomings of prior methods based on graph convolutions or their approximations. By stacking layers in which nodes are able to attend over their neighborhoods' features, we enable (implicitly) specifying different weights to different nodes in a neighborhood, without requiring any kind of costly matrix operation (such as inversion) or depending on knowing the graph structure upfront. In this way, we address several key challenges of spectral-based graph neural networks simultaneously, and make our model readily applicable to inductive as well as transductive problems. Our GAT models have achieved or matched state-of-the-art results across four established transductive and inductive graph benchmarks: the Cora, Citeseer and Pubmed citation network datasets, as well as a proteinprotein interaction dataset (wherein test graphs remain unseen during training).},
+archivePrefix = {arXiv},
+arxivId = {1710.10903},
+author = {Velickovi{\'{c}}, Petar and Cucurull, Guillem and Casanova, Arantxa and Romero, Adriana and Li{\`{o}}, Pietro and Bengio, Yoshua},
+eprint = {1710.10903},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Graph attention networks - Velickovi{\'{c}} et al. - 2017.pdf:pdf},
+issn = {23318422},
+journal = {arXiv},
+pages = {1--12},
+title = {{Graph attention networks}},
+year = {2017}
+}
+
+@article{Battaglia2018,
+abstract = {Artificial intelligence (AI) has undergone a renaissance recently, making major progress in key domains such as vision, language, control, and decision-making. This has been due, in part, to cheap data and cheap compute resources, which have fit the natural strengths of deep learning. However, many defining characteristics of human intelligence, which developed under much different pressures, remain out of reach for current approaches. In particular, generalizing beyond one's experiences—a hallmark of human intelligence from infancy—remains a formidable challenge for modern AI. The following is part position paper, part review, and part unification. We argue that combinatorial generalization must be a top priority for AI to achieve human-like abilities, and that structured representations and computations are key to realizing this objective. Just as biology uses nature and nurture cooperatively, we reject the false choice between “hand-engineering” and “end-to-end” learning, and instead advocate for an approach which benefits from their complementary strengths. We explore how using relational inductive biases within deep learning architectures can facilitate learning about entities, relations, and rules for composing them. We present a new building block for the AI toolkit with a strong relational inductive bias—the graph network—which generalizes and extends various approaches for neural networks that operate on graphs, and provides a straightforward interface for manipulating structured knowledge and producing structured behaviors. We discuss how graph networks can support relational reasoning and combinatorial generalization, laying the foundation for more sophisticated, interpretable, and flexible patterns of reasoning. As a companion to this paper, we have also released an open-source software library for building graph networks, with demonstrations of how to use them in practice.},
+archivePrefix = {arXiv},
+arxivId = {1806.01261},
+author = {Battaglia, Peter W. and Hamrick, Jessica B. and Bapst, Victor and Sanchez-Gonzalez, Alvaro and Zambaldi, Vinicius and Malinowski, Mateusz and Tacchetti, Andrea and Raposo, David and Santoro, Adam and Faulkner, Ryan and Gulcehre, Caglar and Song, Francis and Ballard, Andrew and Gilmer, Justin and Dahl, George and Vaswani, Ashish and Allen, Kelsey and Nash, Charles and Langston, Victoria and Dyer, Chris and Heess, Nicolas and Wierstra, Daan and Kohli, Pushmeet and Botvinick, Matt and Vinyals, Oriol and Li, Yujia and Pascanu, Razvan},
+eprint = {1806.01261},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Relational inductive biases, deep learning, and graph networks - Battaglia et al. - 2018.pdf:pdf},
+issn = 23318422,
+journal = {arXiv},
+mendeley-groups = {GNN},
+pages = {1--40},
+title = {{Relational inductive biases, deep learning, and graph networks}},
+year = 2018
+}
+
+@article{DeCao2018,
+abstract = {Deep generative models for graph-structured data offer a new angle on the problem of chemical synthesis: by optimizing differentiable models that directly generate molecular graphs, it is possible to side-step expensive search procedures in the discrete and vast space of chemical structures. We introduce MolGAN, an implicit, likelihood-free generative model for small molecular graphs that circumvents the need for expensive graph matching procedures or node ordering heuristics of previous likelihood-based methods. Our method adapts generative adversarial networks (GANs) to operate directly on graph-structured data. We combine our approach with a reinforcement learning objective to encourage the generation of molecules with specific desired chemical properties. In experiments on the QM9 chemical database, we demonstrate that our model is capable of generating close to 100{\%} valid compounds. MolGAN compares favorably both to recent proposals that use string-based (SMILES) representations of molecules and to a likelihood-based method that directly generates graphs, albeit being susceptible to mode collapse.},
+archivePrefix = {arXiv},
+arxivId = {1805.11973},
+author = {{De Cao}, Nicola and Kipf, Thomas},
+eprint = {1805.11973},
+file = {:home/bgauzere/Documents/Mendeley Desktop/MolGAN An implicit generative model for small molecular graphs - De Cao, Kipf - 2018.pdf:pdf},
+keywords = {preimage},
+mendeley-groups = {pre image GNN/Clement},
+mendeley-tags = {preimage},
+title = {{MolGAN: An implicit generative model for small molecular graphs}},
+url = {http://arxiv.org/abs/1805.11973},
+year = {2018}
+}
+
+@article{Liao2019,
+abstract = {We propose a new family of efficient and expressive deep generative models of graphs, called Graph Recurrent Attention Networks (GRANs). Our model generates graphs one block of nodes and associated edges at a time. The block size and sampling stride allow us to trade off sample quality for efficiency. Compared to previous RNN-based graph generative models, our framework better captures the auto-regressive conditioning between the already-generated and to-be-generated parts of the graph using Graph Neural Networks (GNNs) with attention. This not only reduces the dependency on node ordering but also bypasses the long-term bottleneck caused by the sequential nature of RNNs. Moreover, we parameterize the output distribution per block using a mixture of Bernoulli, which captures the correlations among generated edges within the block. Finally, we propose to handle node orderings in generation by marginalizing over a family of canonical orderings. On standard benchmarks, we achieve state-of-the-art time efficiency and sample quality compared to previous models. Additionally, we show our model is capable of generating large graphs of up to 5K nodes with good quality. To the best of our knowledge, GRAN is the first deep graph generative model that can scale to this size. Our code is released at: Https://github.com/lrjconan/GRAN.},
+annote = {Une fois une it{\'{e}}ration faite, on ne revient pas dessus},
+archivePrefix = {arXiv},
+arxivId = {1910.00760},
+author = {Liao, Renjie and Li, Yujia and Song, Yang and Wang, Shenlong and Nash, Charlie and Hamilton, William L. and Duvenaud, David and Urtasun, Raquel and Zemel, Richard},
+eprint = {1910.00760},
+file = {:home/bgauzere/Documents/Mendeley Desktop/Efficient Graph Generation with Graph Recurrent Attention Networks - Liao et al. - 2019.pdf:pdf},
+journal = {arXiv},
+mendeley-groups = {pre image GNN/Clement},
+number = {NeurIPS},
+pages = {1--13},
+title = {{Efficient Graph Generation with Graph Recurrent Attention Networks}},
+year = {2019}
+}
