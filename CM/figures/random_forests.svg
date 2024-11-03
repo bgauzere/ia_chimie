@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 1518.7463 845.12317"
+   viewBox="0 0 1278.9647 1085.693"
    version="1.1"
    id="svg19"
    sodipodi:docname="random_forests.svg"
-   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
-   width="1518.7463"
-   height="845.12317"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   width="1278.9647"
+   height="1085.693"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,11 +23,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.0724325"
-     inkscape:cx="1081.6532"
-     inkscape:cy="544.55643"
+     inkscape:zoom="0.11465293"
+     inkscape:cx="1888.3077"
+     inkscape:cy="1007.3882"
      inkscape:window-width="1920"
-     inkscape:window-height="1136"
+     inkscape:window-height="1016"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -35,9 +35,7 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:showpageshadow="2"
-     inkscape:deskcolor="#d1d1d1" />
+     fit-margin-bottom="0" />
   <defs
      id="defs4">
     <marker
@@ -917,6 +915,18 @@
      cx="981.43939"
      cy="659.58185"
      r="16.576252" />
+  <circle
+     style="fill:#4e9a06;stroke:#4e9a06;stroke-width:2.79114;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.988554"
+     id="path2484-0-4-6"
+     cx="511.76569"
+     cy="1034.4749"
+     r="43.681484" />
+  <circle
+     style="fill:#3465a4;stroke:#3465a4;stroke-width:2.79114;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.988554"
+     id="path2484-5-6-1-5"
+     cx="792.67126"
+     cy="1040.616"
+     r="43.681484" />
   <g
      id="g4771"
      transform="translate(723.35596,267.45892)">
@@ -1091,32 +1101,14 @@
        cy="101.66087"
        r="16.576252" />
   </g>
-  <g
-     id="g1"
-     transform="translate(-215.41103,20.987732)">
-    <circle
-       style="fill:#4e9a06;stroke:#4e9a06;stroke-width:2.79114;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.988554"
-       id="path2484-0-4-6"
-       cx="-542.02667"
-       cy="1682.9392"
-       r="43.681484"
-       transform="rotate(-90)" />
-    <circle
-       style="fill:#3465a4;stroke:#3465a4;stroke-width:2.79114;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.988554"
-       id="path2484-5-6-1-5"
-       cx="-261.12103"
-       cy="1689.0803"
-       r="43.681484"
-       transform="rotate(-90)" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 1491.737,539.65837 h 101.1275 v 0.1656 0 0 h 25.4155"
-       id="path5761"
-       sodipodi:nodetypes="cccccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-2)"
-       d="m 1494.028,260.66747 h 101.1275 v 0.1656 0 0 h 25.4156"
-       id="path5761-7"
-       sodipodi:nodetypes="cccccc" />
-  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+     d="m 514.134,843.27259 v 101.1275 h -0.16559 v 0 0 25.41554"
+     id="path5761"
+     sodipodi:nodetypes="cccccc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-2)"
+     d="m 793.12486,845.56364 v 101.1275 h -0.16559 v 0 0 25.41554"
+     id="path5761-7"
+     sodipodi:nodetypes="cccccc" />
 </svg>
