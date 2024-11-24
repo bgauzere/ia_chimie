@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 663.31506 372.69742"
+   height="372.69742"
+   width="663.31506"
+   xml:space="preserve"
+   id="svg2"
+   version="1.1"
+   sodipodi:docname="loss_function.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><sodipodi:namedview
+   id="namedview226"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.8107967"
+   inkscape:cx="235.25557"
+   inkscape:cy="62.403472"
+   inkscape:window-width="3840"
+   inkscape:window-height="1531"
+   inkscape:window-x="0"
+   inkscape:window-y="32"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg2" />
+  <desc
+   id="desc196">The loss function for the training set gradually declines. By contrast, the loss function for the validation set declines, but then starts to rise.</desc>
+  <metadata
+   id="metadata8"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs6"><clipPath
+   id="clipPath22"
+   clipPathUnits="userSpaceOnUse"><path
+     id="path20"
+     d="M 0,0 H 365760 V 205740 H 0 Z" /></clipPath>
+
+
+
+</defs><path
+   d="m 67.598289,6.39746 c 95.435301,37.23177 188.426461,98.97626 233.415921,194.22388 28.44233,55.97065 88.62655,83.92546 144.49349,105.14946 53.85956,18.03053 111.77523,11.63773 167.63357,12.91631 13.57385,0.18032 27.15126,0.68083 40.67646,1.87859"
+   style="fill:none;stroke:#1155cc;stroke-width:3.99999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+   id="path38"
+   sodipodi:nodetypes="cssssssssc" /><path
+   d="M 60.703158,332.26442 H 643.69962"
+   style="fill:none;stroke:#595959;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+   id="path98"
+   sodipodi:nodetypes="cc" /><path
+   d="m 645.31516,337.21961 13.61423,-4.95519 -13.61423,-4.95518 z"
+   style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+   id="path100" /><path
+   d="m 375.99924,337.23292 h 103.9368 v 35.46449 h -103.9368 z"
+   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none;stroke-width:0.00262467"
+   id="path108" /><text
+   y="363.04831"
+   x="280.46371"
+   style="font-variant:normal;font-weight:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.999999"
+   id="text118"><tspan
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.999999"
+     x="280.46371"
+     y="363.04831"
+     id="tspan116">Learning process</tspan></text><path
+   d="M 61.520098,332.50326 V 0"
+   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none;stroke-width:0.00262467"
+   id="path128" /><path
+   d="M 61.520098,332.50326 V 17.99996"
+   style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+   id="path130" /><path
+   d="m 0,145.21756 h 59.369959 v 35.46449 H 0 Z"
+   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none;stroke-width:0.00262467"
+   id="path140" /><text
+   y="172.13748"
+   x="8.9999819"
+   style="font-variant:normal;font-weight:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.999999"
+   id="text150"><tspan
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.999999"
+     x="8.9999819"
+     y="172.13748"
+     id="tspan148">Loss</tspan></text></svg>
