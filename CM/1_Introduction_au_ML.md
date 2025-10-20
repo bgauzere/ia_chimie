@@ -19,32 +19,17 @@ paginate: true
 
 - **Deep Learning**: A subset of ML that uses neural networks with many layers
 
-
 ---
 
 # A Brief History of AI
 
 <style>
-img[alt~="center"] {
+img[alt~="center" ] {
   display: block;
   margin: 0 auto;
 }
 </style>
-
-![center](figures/timeline.svg)
-
----
-# Darthmouth Conference 
-
-> _"We propose that a 2-month, 10-man study of artificial intelligence be carried out during the summer of 1956 at Dartmouth College in Hanover, New Hampshire. The study is to proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it. An attempt will be made to find how to make machines use language, form abstractions and concepts, solve kinds of problems now reserved for humans, and improve themselves. We think that a significant advance can be made in one or more of these problems if a carefully selected group of scientists work on it together for a summer."_ 
-
----
-
-# How AI evolved through time ?
-
-## Theory : The imitation game
-
-![center fit](figures/Turing_test_diagram.png)
+![center width:1000](figures/timeline.svg)
 
 ---
 
@@ -167,7 +152,7 @@ grand_parent(X,Y) :- parent(X,Z), parent(Z,Y).
  **Purpose**  
 Given a dataset $\{  (x_i, y_i) \in \mathcal{X} \times \mathcal{Y}, i = 1, \dots, N \}$, learn the dependencies between $\mathcal{X}$ and $\mathcal{Y}$.
 
-- Example: Learn the relationship between cardiac risk and food habits. $\x_i$ is a person described by $d$ features about their food habits; $y_i$ is a binary category (risky, not risky).
+- Example: Learn the relationship between cardiac risk and food habits. $x_i$ is a person described by $d$ features about their food habits; $y_i$ is a binary category (risky, not risky).
 - **$y_i$ is essential for the learning process.**
 - Methods: K-Nearest Neighbors, SVM, Decision Tree, etc.
 
@@ -191,7 +176,8 @@ $$X(i,j) : \text{j-th feature of the i-th sample.}$$
 
 ---
 
-![X Data Visualization](figures/X_data.svg)
+# X Data Visualization
+![center width:800](figures/X_data.svg)
 
 ---
 
@@ -212,13 +198,14 @@ $$
 ---
 
 ## Example
-![bg right fit](figures/data.svg)
+![bg right fit](figures/toy_reg_dataset.svg)
+
 
 What is the underlying $f$ function?
 
 ---
 
-![center fit ](figures/interpolation.svg)
+![center height:600](figures/models_comparison.svg)
 
 ---
 
