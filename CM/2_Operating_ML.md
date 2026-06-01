@@ -450,14 +450,27 @@ Thanks to kernel trick, SVM can compute any kind of separation line
 
 ## $C$ and $\varepsilon$ impact
 
-<div class="slide" style="text-align: center;">
-  <img src="figures/svr_C1_eps10.svg" style="width: 40%;">
-  <img src="figures/svr_C10_eps10.svg" style="width: 40%;">
-  <img src="figures/svr_C1_eps20.svg" style="width: 40%;">
-  <img src="figures/svr_C10_eps20.svg" style="width: 40%;">
-</div>
+<table style="width:100%; border-collapse:collapse; text-align:center;">
+  <tr>
+    <td style="vertical-align:middle; text-align:center;">
+      <img src="figures/svr_C1_eps10.svg" width="75%">
+    </td>
+    <td style="vertical-align:middle; text-align:center;">
+      <img src="figures/svr_C10_eps10.svg" width="75%">
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:middle; text-align:center;">
+      <img src="figures/svr_C1_eps20.svg" width="75%">
+    </td>
+    <td style="vertical-align:middle; text-align:center;">
+      <img src="figures/svr_C10_eps20.svg" width="75%">
+    </td>
+  </tr>
+</table>
 
 ---
+
 ## SVM : the code !
 
 ```python
